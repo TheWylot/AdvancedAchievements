@@ -17,4 +17,4 @@ jobs:
       with:
         maven-version: 3.8.2
     - name: Build project
-      run: mvn install -B
+      run: mvn clean install -U
