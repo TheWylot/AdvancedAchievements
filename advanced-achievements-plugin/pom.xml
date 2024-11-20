@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.hm.achievement</groupId>
 		<artifactId>advanced-achievements</artifactId>
-		<version>8.0.2</version>
+		<version>8.1</version>
 	</parent>
 	<artifactId>advanced-achievements-plugin</artifactId>
 	<packaging>jar</packaging>
@@ -34,7 +34,7 @@
 				<executions>
 					<execution>
 						<configuration>
-							<finalName>AdvancedAchievements</finalName>
+							<finalName>AdvancedAchievements-${version}</finalName>
 							<minimizeJar>true</minimizeJar>
 							<filters>
 								<filter>
@@ -139,16 +139,6 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-		</dependency>
-
-		<!-- Test dependencies -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-junit-jupiter</artifactId>
 		</dependency>
 	</dependencies>
 </project>
