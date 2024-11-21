@@ -97,10 +97,10 @@ public class HelpCommand extends AbstractCommand {
 		langCommandGenerateHover = langConfig.getString("aach-command-generate-hover");
 		langCommandGive = header("/aach give &oach player")
 				+ translateColorCodes(StringUtils.replaceEach(langConfig.getString("aach-command-give"),
-						new String[] { "ACH", "NAME" }, new String[] { "&oach&7", "&oplayer&7" }));
+						new String[] { "{achievementname}", "{playername}" }, new String[] { "&oach&7", "&oplayer&7" }));
 		langCommandInspect = header("/aach inspect &oach")
 				+ translateColorCodes(
-						StringUtils.replaceOnce(langConfig.getString("aach-command-inspect"), "ACH", "&oach&7"));
+						StringUtils.replaceOnce(langConfig.getString("aach-command-inspect"), "{achivementname}", "&oach&7"));
 		langCommandInspectHover = langConfig.getString("aach-command-inspect-hover");
 		langCommandGiveHover = langConfig.getString("aach-command-give-hover");
 		langCommandAdd = header("/aach add &ox cat player") + langConfig.getString("aach-command-add");
@@ -110,11 +110,11 @@ public class HelpCommand extends AbstractCommand {
 		langCommandResetHover = langConfig.getString("aach-command-reset-hover");
 		langCommandCheck = header("/aach check &oach player")
 				+ translateColorCodes(StringUtils.replaceEach(langConfig.getString("aach-command-check"),
-						new String[] { "ACH", "NAME" }, new String[] { "&oach&7", "&oplayer&7" }));
+						new String[] { "{achievementname}", "{playername}" }, new String[] { "&oach&7", "&oplayer&7" }));
 		langCommandCheckHover = langConfig.getString("aach-command-check-hover");
 		langCommandDelete = header("/aach delete &oach player")
 				+ translateColorCodes(StringUtils.replaceEach(langConfig.getString("aach-command-delete"),
-						new String[] { "ACH", "NAME" }, new String[] { "&oach&7", "&oplayer&7" }));
+						new String[] { "{achivementname}", "{playername}" }, new String[] { "&oach&7", "&oplayer&7" }));
 		langCommandDeleteHover = langConfig.getString("aach-command-delete-hover");
 		langTip = ChatColor.GRAY + translateColorCodes(langConfig.getString("aach-tip"));
 	}

@@ -46,10 +46,10 @@ public class CheckCommand extends AbstractParsableCommand {
 
 		// Check if achievement exists in database and display message accordingly.
 		if (cacheManager.hasPlayerAchievement(player.getUniqueId(), achievementName)) {
-			sender.sendMessage(StringUtils.replaceEach(langCheckAchievementTrue, new String[] { "PLAYER", "ACH" },
+			sender.sendMessage(StringUtils.replaceEach(langCheckAchievementTrue, new String[] { "{playername}", "{achievementname}" },
 					new String[] { args[args.length - 1], achievementName }));
 		} else {
-			sender.sendMessage(StringUtils.replaceEach(langCheckAchievementFalse, new String[] { "PLAYER", "ACH" },
+			sender.sendMessage(StringUtils.replaceEach(langCheckAchievementFalse, new String[] { "{playername}", "{achievementname}" },
 					new String[] { args[args.length - 1], achievementName }));
 		}
 	}

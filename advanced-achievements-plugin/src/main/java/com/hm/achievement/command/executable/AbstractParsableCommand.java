@@ -50,7 +50,7 @@ public abstract class AbstractParsableCommand extends AbstractCommand {
 		}
 		for (Entity entity : entities) {
 			if (entity == null) {
-				sender.sendMessage(pluginHeader + StringUtils.replaceOnce(langPlayerOffline, "PLAYER", searchedName));
+				sender.sendMessage(pluginHeader + StringUtils.replaceOnce(langPlayerOffline, "{playername}", searchedName));
 				break;
 			}
 			if (entity instanceof Player) {

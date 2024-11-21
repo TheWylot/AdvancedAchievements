@@ -60,15 +60,15 @@ public class DeleteCommand extends AbstractParsableCommand {
 		if (WILDCARD.equals(achievementName)) {
 			cacheManager.removePreviouslyReceivedAchievements(player.getUniqueId(), achievementMap.getAllNames());
 			databaseManager.deleteAllPlayerAchievements(player.getUniqueId());
-			sender.sendMessage(StringUtils.replace(langAllDeleteAchievements, "PLAYER", args[args.length - 1]));
+			sender.sendMessage(StringUtils.replace(langAllDeleteAchievements, "{playername}", args[args.length - 1]));
 		} else if (cacheManager.hasPlayerAchievement(player.getUniqueId(), achievementName)) {
 			cacheManager.removePreviouslyReceivedAchievements(player.getUniqueId(),
 					Collections.singletonList(achievementName));
 			databaseManager.deletePlayerAchievement(player.getUniqueId(), achievementName);
-			sender.sendMessage(StringUtils.replaceEach(langDeleteAchievements, new String[] { "PLAYER", "ACH" },
+			sender.sendMessage(StringUtils.replaceEach(langDeleteAchievements, new String[] { "{playername}", "{achievementname}" },
 					new String[] { args[args.length - 1], achievementName }));
 		} else {
-			sender.sendMessage(StringUtils.replaceEach(langCheckAchievementFalse, new String[] { "PLAYER", "ACH" },
+			sender.sendMessage(StringUtils.replaceEach(langCheckAchievementFalse, new String[] { "{playername}", "{achievementname}" },
 					new String[] { args[args.length - 1], achievementName }));
 		}
 	}
