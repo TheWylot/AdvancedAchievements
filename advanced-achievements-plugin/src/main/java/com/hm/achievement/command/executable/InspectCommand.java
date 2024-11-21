@@ -79,7 +79,7 @@ public class InspectCommand extends AbstractCommand {
 		Achievement achievement = getAchievement(displayName);
 		if (achievement == null) {
 			sender.sendMessage(pluginHeader + StringUtils.replaceEach(langConfig.getString("achievement_not_recognized"),
-					new String[] { "NAME", "CLOSEST_MATCH" }, new String[] { displayName, StringHelper
+					new String[] { "{achievementname}", "CLOSEST_MATCH" }, new String[] { displayName, StringHelper
 							.getClosestMatch(displayName, achievementMap.getAllSanitisedDisplayNames()) }));
 			return;
 		}

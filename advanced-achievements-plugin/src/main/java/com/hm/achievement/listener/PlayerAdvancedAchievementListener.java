@@ -256,8 +256,8 @@ public class PlayerAdvancedAchievementListener implements Listener, Reloadable {
 				.flatMap(List::stream)
 				.map(m -> StringHelper.replacePlayerPlaceholders(m, player))
 				.collect(Collectors.toList());
-		String message = langAchievementNew.contains("ACH")
-				? StringUtils.replaceOnce(langAchievementNew, "ACH", nameToShowUser)
+		String message = langAchievementNew.contains("{achievementname}")
+				? StringUtils.replaceOnce(langAchievementNew, "{achievementname}", nameToShowUser)
 				: langAchievementNew + nameToShowUser;
 		if (configHoverableReceiverChatText) {
 			StringBuilder hover = new StringBuilder(messageToShowUser + "\n");
@@ -278,10 +278,10 @@ public class PlayerAdvancedAchievementListener implements Listener, Reloadable {
 	 * @param otherPlayer
 	 */
 	private void displayNotification(Player receiver, String nameToShowUser, Player otherPlayer) {
-		String message = langAchievementReceived.contains("ACH")
-				? StringUtils.replaceEach(langAchievementReceived, new String[] { "PLAYER", "ACH" },
+		String message = langAchievementReceived.contains("{achievementname}")
+				? StringUtils.replaceEach(langAchievementReceived, new String[] { "{playername}", "{achievementname}" },
 						new String[] { receiver.getName(), nameToShowUser })
-				: StringUtils.replaceOnce(langAchievementReceived, "PLAYER", receiver.getName()) + nameToShowUser;
+				: StringUtils.replaceOnce(langAchievementReceived, "{playername}", receiver.getName()) + nameToShowUser;
 		if (configActionBarNotify) {
 			otherPlayer.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText("&o" + message));
 		} else {

@@ -58,10 +58,10 @@ public class ResetCommand extends AbstractParsableCommand {
 		Set<String> categorySubcategories = achievementMap.getCategorySubcategories();
 		if (WILDCARD.equals(categoryWithSubcategory)) {
 			cacheManager.resetPlayerStatistics(player.getUniqueId(), categorySubcategories);
-			sender.sendMessage(StringUtils.replace(langResetAllSuccessful, "PLAYER", player.getName()));
+			sender.sendMessage(StringUtils.replace(langResetAllSuccessful, "{playername}", player.getName()));
 		} else if (categorySubcategories.contains(categoryWithSubcategory)) {
 			cacheManager.resetPlayerStatistics(player.getUniqueId(), Collections.singletonList(categoryWithSubcategory));
-			sender.sendMessage(StringUtils.replaceEach(langResetSuccessful, new String[] { "CAT", "PLAYER" },
+			sender.sendMessage(StringUtils.replaceEach(langResetSuccessful, new String[] { "CAT", "{playername}" },
 					new String[] { categoryWithSubcategory, player.getName() }));
 		} else {
 			sender.sendMessage(StringUtils.replaceEach(langCategoryDoesNotExist, new String[] { "CAT", "CLOSEST_MATCH" },

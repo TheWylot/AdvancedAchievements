@@ -68,10 +68,10 @@ public class GiveCommand extends AbstractParsableCommand {
 			// Check whether player has already received achievement and cannot receive it again.
 			if (!configMultiCommand
 					&& cacheManager.hasPlayerAchievement(player.getUniqueId(), achievement.get().getName())) {
-				sender.sendMessage(StringUtils.replaceOnce(langAchievementAlreadyReceived, "PLAYER", args[2]));
+				sender.sendMessage(StringUtils.replaceOnce(langAchievementAlreadyReceived, "{playername}", args[2]));
 				return;
 			} else if (!player.hasPermission("achievement." + achievement.get().getName())) {
-				sender.sendMessage(StringUtils.replaceOnce(langAchievementNoPermission, "PLAYER", args[2]));
+				sender.sendMessage(StringUtils.replaceOnce(langAchievementNoPermission, "{playername}", args[2]));
 				return;
 			}
 

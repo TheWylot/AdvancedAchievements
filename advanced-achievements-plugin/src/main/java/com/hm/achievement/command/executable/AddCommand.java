@@ -93,7 +93,7 @@ public class AddCommand extends AbstractParsableCommand {
 				}
 				statisticIncreaseHandler.checkThresholdsAndAchievements(player, category, amount);
 			}
-			sender.sendMessage(StringUtils.replaceEach(langStatisticIncreased, new String[] { "ACH", "AMOUNT", "PLAYER" },
+			sender.sendMessage(StringUtils.replaceEach(langStatisticIncreased, new String[] { "{achievementname}", "{amount}", "{playername}" },
 					new String[] { args[2], args[1], args[3] }));
 		} else {
 			sender.sendMessage(StringUtils.replaceEach(langCategoryDoesNotExist, new String[] { "CAT", "CLOSEST_MATCH" },
